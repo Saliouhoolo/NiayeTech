@@ -9,9 +9,7 @@ public class ResourceConfigs implements WebMvcConfigurer
     private static final String[] CLASSPATH_RESOURCE_LOCATIONS =
             {
                     "classpath:/resources/",
-                    "classpath:/templates/files-cours/",
-                    "classpath:/templates/files-user/",
-                    "classpath:/templates/files-lecons/",
+                    "classpath:/templates/files-produits/"
             };
 
     @Override
