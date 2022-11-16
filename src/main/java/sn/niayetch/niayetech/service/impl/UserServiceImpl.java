@@ -53,6 +53,10 @@ public class UserServiceImpl implements UserService {
         user.setPrenom(userDetails.getPrenom());
         user.setNom(userDetails.getNom());
         user.setEmail(userDetails.getEmail());
+        user.getRoles().clear();
+        Role role = roleRepository.findByName(userDetails.getRole());
+        user.addRole(role);
+        userRepository.save(user);
         return user;
     }
 

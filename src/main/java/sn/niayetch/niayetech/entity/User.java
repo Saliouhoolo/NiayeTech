@@ -52,8 +52,6 @@ public class User implements UserDetails, Serializable {
     this.nom = nom;
     this.email = email;
     }
-
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
