@@ -22,4 +22,5 @@ public class Category implements  Serializable {
     @Column(name = "libelle",nullable = false)
     private String libelle;
 
+
 }

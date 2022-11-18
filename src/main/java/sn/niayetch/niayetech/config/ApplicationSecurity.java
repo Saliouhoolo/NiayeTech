@@ -61,6 +61,7 @@ public class ApplicationSecurity extends WebSecurityConfigurerAdapter {
                 .antMatchers("/").permitAll()
                 .antMatchers("/api/auth/login").permitAll()
                 .antMatchers("/api/auth/register").permitAll()
+
             //    .antMatchers("/api/produits").permitAll()
                 .antMatchers("/templates/files-produits/**").permitAll()
                 .anyRequest().authenticated();

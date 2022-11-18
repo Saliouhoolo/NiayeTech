@@ -24,7 +24,6 @@ import java.util.Map;
 @RequestMapping("/api")
 public class CategoryController {
     private final CategoryService categoryService;
-
     public CategoryController(CategoryService categoryService) {
         this.categoryService = categoryService;
     }
@@ -34,13 +33,12 @@ public class CategoryController {
     public List<Category> getCategories(){
         return categoryService.getCategories();
     }
-
-
     @RolesAllowed("ROLE_ADMIN")
     @PostMapping("/category")
     public Map<String ,String> createCategory(@RequestBody Category category) throws ValidationException {
         return categoryService.createCategory(category);
     }
+
     @PutMapping("/category/{id}")
     public ResponseEntity<Category> updateCategory(@PathVariable(value="id") Long categoryId, @RequestBody Category categoryDetails){
         Category category = categoryService.updateCategory(categoryId, categoryDetails);
