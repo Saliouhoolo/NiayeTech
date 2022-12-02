@@ -32,10 +32,12 @@ public class User implements UserDetails, Serializable {
     @Column(name = "password",nullable = false)
     private String password;
 
-/*    @JsonIgnore
+    @JsonIgnore
     @OneToMany(mappedBy="createdBy")
-    private Set<Cours> cours;*/
-
+    private Set<Produit> produit;
+ /*   @JsonIgnore
+    @OneToMany(mappedBy="commande")
+    private Set<Commande> commande;*/
     @ManyToMany
     @JoinTable(
             name = "users_roles",

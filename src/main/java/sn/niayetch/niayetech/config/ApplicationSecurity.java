@@ -62,7 +62,7 @@ public class ApplicationSecurity extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/auth/login").permitAll()
                 .antMatchers("/api/auth/register").permitAll()
 
-            //    .antMatchers("/api/produits").permitAll()
+                .antMatchers("/api/produit").permitAll()
                 .antMatchers("/templates/files-produits/**").permitAll()
                 .anyRequest().authenticated();
         http.exceptionHandling()

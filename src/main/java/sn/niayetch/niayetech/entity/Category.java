@@ -1,13 +1,14 @@
 package sn.niayetch.niayetech.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,6 +22,12 @@ public class Category implements  Serializable {
     private Long id;
     @Column(name = "libelle",nullable = false)
     private String libelle;
+    @JsonIgnore
+    @OneToMany(mappedBy="category")
+    private Set<Produit> produit;
 
-
+    @Override
+    public String toString() {
+        return  libelle ;
+    }
 }
