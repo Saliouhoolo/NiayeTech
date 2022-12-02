@@ -82,6 +82,7 @@ public class CommandeServiceImpl implements CommandeService {
         }
         Commande commande1 = commandeOptional.get();
         commande1.setStatus(1);
+        commandeRepository.save(commande1);
         Map<String , String> response = new HashMap<>();
         response.put("message", " commande  maquée comme livré");
         return response;

@@ -35,11 +35,11 @@ public class CommandeController {
     public List<Commande> getCategories(){
         return commandeService.all();
     }
-    @GetMapping("/change/{id}")
+    @GetMapping("/commande/change/{id}")
     public Map<String, String> change(@PathVariable(value="id") int commandeId){
         return commandeService.changeStatus(commandeId);
     }
-    @GetMapping("/detail/{id}")
+    @GetMapping("/commande/detail/{id}")
     public List<Detail> findDetails(@PathVariable(value="id") int commandeId){
         return commandeService.findDetails(commandeId);
     }
